@@ -1,0 +1,182 @@
+<mat-card>
+  <mat-card-title>Personal Information</mat-card-title>
+  <mat-card-content>
+    <mat-grid-list cols="3" rowHeight="1:1">
+      <form [formGroup]="personalForm" (ngSubmit)="next(personalForm.value)">
+        <!--------------------------------------------------------------------------------------------------------------->
+        <mat-grid-tile>
+          <div>
+            <mat-form-field>
+              <input formControlName="fullName" matInput placeholder="الاسم الرباعي بالعربية">
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+        <!--------------------------------------------------------------------------------------------------------------->
+        <mat-grid-tile>
+          <div>
+            <mat-form-field>
+              <input formControlName="fullNameEnglish" matInput placeholder="الاسم الرباعي بالإنكليزية">
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+        <!--------------------------------------------------------------------------------------------------------------->
+        <mat-grid-tile>
+          <mat-card-subtitle>عنوان السكن الدائم</mat-card-subtitle>
+          <mat-list>
+            <mat-list-item>
+              <mat-form-field><input formControlName="city" matInput placeholder="المدينة/المخيم"></mat-form-field>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-form-field><input formControlName="street" matInput placeholder="الحي"></mat-form-field>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-form-field><input formControlName="building" matInput placeholder="البناية"></mat-form-field>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-form-field><input formControlName="floor" matInput placeholder="الطابق"></mat-form-field>
+            </mat-list-item>
+          </mat-list>
+        </mat-grid-tile>
+        <!--------------------------------------------------------------------------------------------------------------->
+        <mat-grid-tile>
+          <div>
+            <mat-form-field>
+              <input formControlName="email" matInput placeholder="البريد الالكتروني" value="{{authService.getCurrentUser()}}">
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+        <!--------------------------------------------------------------------------------------------------------------->
+        <mat-grid-tile>
+          <div>
+            <mat-form-field>
+              <input formControlName="landline" matInput placeholder="تلفون ارضي">
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+        <!--------------------------------------------------------------------------------------------------------------->
+        <mat-grid-tile>
+          <div>
+            <mat-form-field>
+              <input formControlName="parentsMobile" matInput placeholder="خليوي (الأهل)">
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+        <!--------------------------------------------------------------------------------------------------------------->
+        <mat-grid-tile>
+          <div>
+            <mat-form-field>
+              <input formControlName="personalMobile" matInput placeholder="خليوي (الطالب)">
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+        <!--------------------------------------------------------------------------------------------------------------->
+        <mat-grid-tile>
+          <mat-form-field>
+            <input formControlName="birthDate" [matDatepicker]="picker" matInput placeholder="تاريخ الميلاد">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </mat-grid-tile>
+        <!--------------------------------------------------------------------------------------------------------------->
+        <mat-grid-tile>
+          <div>
+            <mat-form-field>
+              <input formControlName="placeOfBirth" matInput placeholder="مكان الولادة">
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+        <!--------------------------------------------------------------------------------------------------------------->
+        <mat-grid-tile>
+          <div>
+            <mat-form-field>
+              <input formControlName="nationalityAtBirth" matInput placeholder="الجنسية الأصلية">
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+        <!--------------------------------------------------------------------------------------------------------------->
+        <mat-grid-tile>
+          <div>
+            <mat-form-field>
+              <input formControlName="nationalityNow" matInput placeholder="الجنسية الحالية">
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+        <!--------------------------------------------------------------------------------------------------------------->
+        <mat-grid-tile>
+          <mat-list>
+            <mat-radio-group formControlName="gender" aria-label="Select an option">
+              <mat-list-item>
+                <mat-radio-button value="Male">ذكر</mat-radio-button>
+              </mat-list-item>
+              <mat-list-item>
+                <mat-radio-button value="Female">انثى</mat-radio-button>
+              </mat-list-item>
+            </mat-radio-group>
+          </mat-list>
+        </mat-grid-tile>
+        <!--------------------------------------------------------------------------------------------------------------->
+        <mat-grid-tile>
+          <mat-list>
+            <mat-radio-group formControlName="socialStatus" aria-label="Select an option">
+              <mat-list-item>
+                <mat-radio-button value="single">اعزب</mat-radio-button>
+              </mat-list-item>
+              <mat-list-item>
+                <mat-radio-button value="married">متزوج</mat-radio-button>
+              </mat-list-item>
+              <mat-list-item>
+                <mat-radio-button value="widowed">ارمل</mat-radio-button>
+              </mat-list-item>
+              <mat-list-item>
+                <mat-radio-button value="divorced">مطلق</mat-radio-button>
+              </mat-list-item>
+            </mat-radio-group>
+          </mat-list>
+        </mat-grid-tile>
+        <!--------------------------------------------------------------------------------------------------------------->
+        <mat-grid-tile>
+          <div>
+            <mat-form-field>
+              <input formControlName="employmentStatus" matInput placeholder="اذا كنت تعمل، ما هو نوع العمل">
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+        <!--------------------------------------------------------------------------------------------------------------->
+        <mat-grid-tile>
+          <div>
+            <mat-form-field>
+              <input formControlName="companyName" matInput placeholder="اسم الشركة أو المؤسسة">
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+        <!--------------------------------------------------------------------------------------------------------------->
+        <mat-grid-tile>
+          <div>
+            <mat-form-field>
+              <input formControlName="companyAddress" matInput placeholder="عنوانها">
+            </mat-form-field>
+          </div>
+
+        </mat-grid-tile>
+        <!--------------------------------------------------------------------------------------------------------------->
+        <mat-grid-tile>
+          <div>
+            <mat-form-field>
+              <input formControlName="lastSalary" matInput placeholder="اخر راتب تقاضيته">
+            </mat-form-field>
+          </div>
+
+        </mat-grid-tile>
+        <!--------------------------------------------------------------------------------------------------------------->
+        <mat-grid-tile>
+          <mat-list>
+            <mat-list-item><button type="submit" mat-button [disabled]="!personalForm.valid">Next</button></mat-list-item>
+            <mat-list-item><button (click)="save(personalForm)" mat-button>Save Data</button></mat-list-item>
+          </mat-list>
+
+        </mat-grid-tile>
+      </form>
+    </mat-grid-list>
+  </mat-card-content>
+</mat-card>
+

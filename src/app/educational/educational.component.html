@@ -1,0 +1,155 @@
+<mat-card>
+  <mat-card-title>Educational Information</mat-card-title>
+  <mat-card-content>
+    <mat-grid-list cols="3" rowHeight="1:1">
+      <form [formGroup]="educationalForm" (ngSubmit)="next(educationalForm.value)">
+        <!--------------------------------------------------------------------------------------------------------------->
+        <mat-grid-tile>
+          <mat-card-subtitle>الشهادة الرسمية</mat-card-subtitle>
+
+          <mat-list>
+            <mat-radio-group formControlName="highSchoolDegree" aria-label="Select an option">
+              <mat-list-item>
+                <mat-radio-button value="LS">LS</mat-radio-button>
+              </mat-list-item>
+              <mat-list-item>
+                <mat-radio-button value="GS">GS</mat-radio-button>
+              </mat-list-item>
+              <mat-list-item>
+                <mat-radio-button value="SE">SE</mat-radio-button>
+              </mat-list-item>
+              <mat-list-item>
+                <mat-radio-button value="LH">LH</mat-radio-button>
+              </mat-list-item>
+              <mat-list-item>
+                <mat-radio-button value="other">Other</mat-radio-button>
+              </mat-list-item>
+            </mat-radio-group>
+          </mat-list>
+        </mat-grid-tile>
+        <!--------------------------------------------------------------------------------------------------------------->
+        <mat-grid-tile>
+          <mat-form-field>
+            <input formControlName="highSchoolAverage" matInput placeholder="المعدل من ١٠٠">
+          </mat-form-field>
+        </mat-grid-tile>
+        <!--------------------------------------------------------------------------------------------------------------->
+        <mat-grid-tile>
+          <mat-form-field>
+            <input formControlName="highSchoolGraduationDate" [matDatepicker]="highSchoolGraduationDatePicker"
+                   matInput placeholder="التاريخ">
+            <mat-datepicker-toggle matSuffix [for]="highSchoolGraduationDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker #highSchoolGraduationDatePicker></mat-datepicker>
+          </mat-form-field>
+        </mat-grid-tile>
+        <!--------------------------------------------------------------------------------------------------------------->
+        <mat-grid-tile>
+          <mat-form-field>
+            <input formControlName="highSchoolName" matInput placeholder="المدرسة الثانوية التي تخرجت منها">
+          </mat-form-field>
+        </mat-grid-tile>
+        <!--------------------------------------------------------------------------------------------------------------->
+        <mat-grid-tile>
+          <mat-form-field>
+            <input formControlName="highSchoolAddress" matInput placeholder="عنوانها">
+          </mat-form-field>
+        </mat-grid-tile>
+        <!--------------------------------------------------------------------------------------------------------------->
+        <mat-grid-tile>
+          <mat-card-subtitle>naw3 al madrasa</mat-card-subtitle>
+
+
+          <mat-list>
+            <mat-radio-group formControlName="highSchoolType" aria-label="Select an option">
+              <mat-list-item>
+                <mat-radio-button value="UNRWA">UNRWA</mat-radio-button>
+              </mat-list-item>
+              <mat-list-item>
+                <mat-radio-button value="PUBLIC">رسمية</mat-radio-button>
+              </mat-list-item>
+              <mat-list-item>
+                <mat-radio-button value="PRIVATE">خاصة</mat-radio-button>
+              </mat-list-item>
+            </mat-radio-group>
+          </mat-list>
+        </mat-grid-tile>
+        <!--------------------------------------------------------------------------------------------------------------->
+        <mat-grid-tile>
+          <mat-list>
+            <mat-card-subtitle>اذا كنت ملتحقا بالجامعة</mat-card-subtitle>
+
+            <mat-list-item>
+              <mat-form-field><input formControlName="oldUniName" matInput placeholder="اسم الجامعة">
+              </mat-form-field>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-form-field><input formControlName="oldUniAddress" matInput placeholder="عنوانها"></mat-form-field>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-form-field><input formControlName="oldUniMajor" matInput placeholder="الاختصاص الجامعي"></mat-form-field>
+            </mat-list-item>
+          </mat-list>
+        </mat-grid-tile>
+        <!--------------------------------------------------------------------------------------------------------------->
+        <mat-grid-tile>
+          <mat-card-subtitle>shahada tanwi l 7ousul 3alayha</mat-card-subtitle>
+
+          <mat-list>
+            <mat-radio-group formControlName="degreeLevelPlanned" aria-label="Select an option">
+              <mat-list-item>
+                <mat-radio-button value="BACHELOR">Bachelor</mat-radio-button>
+              </mat-list-item>
+              <mat-list-item>
+                <mat-radio-button value="MASTER">Master</mat-radio-button>
+              </mat-list-item>
+              <mat-list-item>
+                <mat-radio-button value="DEGREE_EDUCATION">Deplom tarbiya</mat-radio-button>
+              </mat-list-item>
+              <mat-list-item>
+                <mat-radio-button value="OTHER">Other</mat-radio-button>
+              </mat-list-item>
+            </mat-radio-group>
+          </mat-list>
+        </mat-grid-tile>
+        <!--------------------------------------------------------------------------------------------------------------->
+        <mat-grid-tile>
+          <mat-form-field>
+            <input formControlName="expectedGraduationDate" [matDatepicker]="expectedGraduationDatePicker" matInput
+                   placeholder="tarikh al takharoj al moutawaka3">
+            <mat-datepicker-toggle matSuffix [for]="expectedGraduationDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker #expectedGraduationDatePicker></mat-datepicker>
+          </mat-form-field>
+        </mat-grid-tile>
+        <!--------------------------------------------------------------------------------------------------------------->
+        <mat-grid-tile>
+          <mat-form-field>
+            <input formControlName="majorPlanned" matInput placeholder="ekhtisas al lathi tanwi 3alayh">
+          </mat-form-field>
+        </mat-grid-tile>
+        <!--------------------------------------------------------------------------------------------------------------->
+        <mat-grid-tile>
+          <mat-form-field>
+            <input formControlName="uniName" matInput placeholder="esem l jami3a">
+          </mat-form-field>
+        </mat-grid-tile>
+        <!--------------------------------------------------------------------------------------------------------------->
+        <mat-grid-tile>
+          <mat-form-field>
+            <input formControlName="uniAddress" matInput placeholder="3enwan al jami3a">
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-list>
+            <mat-list-item>
+              <button type="submit" mat-button [disabled]="!educationalForm.valid">Next</button>
+            </mat-list-item>
+            <mat-list-item>
+              <button (click)="save(educationalForm)" mat-button>Save Data</button>
+            </mat-list-item>
+          </mat-list>
+
+        </mat-grid-tile>
+      </form>
+    </mat-grid-list>
+  </mat-card-content>
+</mat-card>

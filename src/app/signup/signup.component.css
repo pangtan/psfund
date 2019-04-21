@@ -1,0 +1,18 @@
+.mat-card {
+  text-align: -webkit-center;
+}
+
+mat-card {
+  max-width: 30%;
+  margin: 2em auto;
+  text-align: center;
+}
+
+em {
+  float: right;
+  color: #E05C65;
+  padding-left: 10px;
+}
+.error div{
+  background-color: #E3C3C5;
+}

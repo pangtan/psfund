@@ -1,0 +1,40 @@
+.login-corner{
+  float: left;
+  width: 33.33%; /* three boxes (use 25% for four, and 50% for two, etc) */
+  padding: 50px; /* if you want space between the images */
+}
+
+.login-corner button {
+  float: right;
+}
+
+.logo-corner button {
+  float: left;
+}
+
+.logo-corner{
+  float: left;
+  width: 33.33%; /* three boxes (use 25% for four, and 50% for two, etc) */
+  padding: 50px; /* if you want space between the images */
+}
+
+.logout-corner{
+  float: left;
+  width: 33.33%; /* three boxes (use 25% for four, and 50% for two, etc) */
+  padding: 50px; /* if you want space between the images */
+}
+
+.logout-corner button,label {
+  float: right;
+}
+
+.application-center{
+  float: left;
+  width: 33.33%; /* three boxes (use 25% for four, and 50% for two, etc) */
+  padding: 50px; /* if you want space between the images */
+}
+
+.application-center button {
+  margin-left:30%;
+}
+

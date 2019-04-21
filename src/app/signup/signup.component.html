@@ -1,0 +1,30 @@
+<mat-card>
+  <mat-card-title> SignUp </mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="signUpForm" (ngSubmit)="signUp(signUpForm.value)">
+      <div [ngClass]="{'error':signUpForm.controls.username.invalid &&
+                      signUpForm.controls.username.touched}">
+        <mat-form-field>
+          <input formControlName="username" matInput placeholder="Username">
+        </mat-form-field>
+      </div>
+      <br>
+      <div [ngClass]="{'error': signUpForm.controls.password.invalid &&
+                      signUpForm.controls.password.touched}">
+        <mat-form-field>
+          <input type="password" formControlName="password" matInput placeholder="Password">
+        </mat-form-field>
+      </div>
+      <br>
+      <div [ngClass]="{'error': signUpForm.controls.confirmPassword.invalid &&
+                      signUpForm.controls.confirmPassword.touched}">
+        <mat-form-field>
+          <input type="password" formControlName="confirmPassword" matInput placeholder="Confirm Password">
+        </mat-form-field>
+      </div>
+      <br>
+      <button type="submit" mat-button [disabled]="!signUpForm.valid">SignUp</button>
+    </form>
+  </mat-card-content>
+</mat-card>
+
