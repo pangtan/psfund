@@ -11,135 +11,108 @@
     </mat-expansion-panel-header>
 
     <div>
-      <mat-form-field>
-        <input matInput placeholder="الاسم الرباعي بالعربية">
-      </mat-form-field>
+      <label>الاسم الرباعي بالعربية:</label>
+      <input value="value" disabled>
     </div>
     <!--------------------------------------------------------------------------------------------------------------->
     <div>
-      <mat-form-field>
-        <input matInput placeholder="الاسم الرباعي بالإنكليزية">
-      </mat-form-field>
+      <label>الاسم الرباعي بالإنكليزية:</label>
+      <input value="value" disabled>
     </div>
     <!--------------------------------------------------------------------------------------------------------------->
-    <mat-card-subtitle>عنوان السكن الدائم</mat-card-subtitle>
-    <mat-list>
-      <mat-list-item>
-        <mat-form-field><input matInput placeholder="المدينة/المخيم"></mat-form-field>
-      </mat-list-item>
-      <mat-list-item>
-        <mat-form-field><input matInput placeholder="الحي"></mat-form-field>
-      </mat-list-item>
-      <mat-list-item>
-        <mat-form-field><input matInput placeholder="البناية"></mat-form-field>
-      </mat-list-item>
-      <mat-list-item>
-        <mat-form-field><input matInput placeholder="الطابق"></mat-form-field>
-      </mat-list-item>
-    </mat-list>
-    <!--------------------------------------------------------------------------------------------------------------->
-
+    <h4>عنوان السكن الدائم</h4>
     <div>
-      <mat-form-field>
-        <input matInput placeholder="البريد الالكتروني" value="id">
-      </mat-form-field>
+      <label>المدينة/المخيم:</label>
+      <input value="value" disabled>
     </div>
+    <div>
+      <label>الحي:</label>
+      <input value="value" disabled>
+    </div>
+    <div>
+      <label>البناية:</label>
+      <input value="value" disabled>
+    </div>
+    <div>
+      <label>الطابق:</label>
+      <input value="value" disabled>
+    </div>
+    <br>
     <!--------------------------------------------------------------------------------------------------------------->
     <div>
-      <mat-form-field>
-        <input matInput placeholder="تلفون ارضي">
-      </mat-form-field>
+      <label>البريد الالكتروني:</label>
+      <input disabled value="id">
     </div>
     <!--------------------------------------------------------------------------------------------------------------->
     <div>
-      <mat-form-field>
-        <input matInput placeholder="خليوي (الأهل)">
-      </mat-form-field>
+      <label>تلفون ارضي:</label>
+      <input value="value" disabled>
     </div>
     <!--------------------------------------------------------------------------------------------------------------->
     <div>
-      <mat-form-field>
-        <input matInput placeholder="خليوي (الطالب)">
-      </mat-form-field>
-    </div>
-    <!--------------------------------------------------------------------------------------------------------------->
-    <mat-form-field>
-      <input matInput placeholder="تاريخ الميلاد">
-    </mat-form-field>
-    <!--------------------------------------------------------------------------------------------------------------->
-    <div>
-      <mat-form-field>
-        <input matInput placeholder="مكان الولادة">
-      </mat-form-field>
+      <label>خليوي الأهل:</label>
+      <input value="value" disabled>
     </div>
     <!--------------------------------------------------------------------------------------------------------------->
     <div>
-      <mat-form-field>
-        <input matInput placeholder="الجنسية الأصلية">
-      </mat-form-field>
+      <label>خليوي الطالب:</label>
+      <input value="value" disabled>
     </div>
     <!--------------------------------------------------------------------------------------------------------------->
     <div>
-      <mat-form-field>
-        <input matInput placeholder="الجنسية الحالية">
-      </mat-form-field>
-    </div>
-    <!--------------------------------------------------------------------------------------------------------------->
-    <mat-list>
-      <mat-radio-group aria-label="Select an option">
-        <mat-list-item>
-          <mat-radio-button value="Male">ذكر</mat-radio-button>
-        </mat-list-item>
-        <mat-list-item>
-          <mat-radio-button value="Female">انثى</mat-radio-button>
-        </mat-list-item>
-      </mat-radio-group>
-    </mat-list>
-    <!--------------------------------------------------------------------------------------------------------------->
-    <mat-list>
-      <mat-radio-group aria-label="Select an option">
-        <mat-list-item>
-          <mat-radio-button value="single">اعزب</mat-radio-button>
-        </mat-list-item>
-        <mat-list-item>
-          <mat-radio-button value="married">متزوج</mat-radio-button>
-        </mat-list-item>
-        <mat-list-item>
-          <mat-radio-button value="widowed">ارمل</mat-radio-button>
-        </mat-list-item>
-        <mat-list-item>
-          <mat-radio-button value="divorced">مطلق</mat-radio-button>
-        </mat-list-item>
-      </mat-radio-group>
-    </mat-list>
-    <!--------------------------------------------------------------------------------------------------------------->
-    <div>
-      <mat-form-field>
-        <input matInput placeholder="اذا كنت تعمل، ما هو نوع العمل">
-      </mat-form-field>
+      <label>تاريخ الميلاد:</label>
+      <input value="value" disabled>
     </div>
     <!--------------------------------------------------------------------------------------------------------------->
     <div>
-      <mat-form-field>
-        <input matInput placeholder="اسم الشركة أو المؤسسة">
-      </mat-form-field>
+      <label>مكان الولادة:</label>
+      <input value="value" disabled>
     </div>
     <!--------------------------------------------------------------------------------------------------------------->
     <div>
-      <mat-form-field>
-        <input matInput placeholder="عنوانها">
-      </mat-form-field>
+      <label>الجنسية الأصلية:</label>
+      <input value="value" disabled>
     </div>
-
     <!--------------------------------------------------------------------------------------------------------------->
     <div>
-      <mat-form-field>
-        <input matInput placeholder="اخر راتب تقاضيته">
-      </mat-form-field>
+      <label>الجنسية الحالية:</label>
+      <input value="value" disabled>
     </div>
-
+    <!--------------------------------------------------------------------------------------------------------------->
+    <div>
+      <label>الجنس:</label>
+      <mat-radio-button disabled value="Male">ذكر</mat-radio-button>
+      <mat-radio-button disabled value="Female">انثى</mat-radio-button>
+    </div>
+    <!--------------------------------------------------------------------------------------------------------------->
+    <div>
+      <label>الجنسية الحالية:</label>
+      <mat-radio-button value="single">اعزب</mat-radio-button>
+      <mat-radio-button value="married">متزوج</mat-radio-button>
+      <mat-radio-button value="widowed">ارمل</mat-radio-button>
+      <mat-radio-button value="divorced">مطلق</mat-radio-button>
+    </div>
+    <h4>اذا كنت تعمل</h4>
+    <div>
+      <label>نوع العمل:</label>
+      <input value="value" disabled>
+    </div>
+    <div>
+      <label>اسم الشركة أو المؤسسة:</label>
+      <input value="value" disabled>
+    </div>
+    <div>
+      <label>عنوانها:</label>
+      <input value="value" disabled>
+    </div>
+    <div>
+      <label>اخر راتب تقاضيته:</label>
+      <input value="value" disabled>
+    </div>
+    <!--------------------------------------------------------------------------------------------------------------->
 
   </mat-expansion-panel>
+
 
   <mat-expansion-panel (opened)="educationalState = true"
                        (closed)="educationalState = false">
@@ -148,53 +121,106 @@
         Educational Information
       </mat-panel-title>
     </mat-expansion-panel-header>
-    <div>
-      <label>الشهادة الرسمية:</label>
-      <input value="value" disabled>
-    </div>
 
     <div>
       <label>الشهادة الرسمية:</label>
-      <input value="value" disabled>
+      <mat-radio-button disabled value="LS">LS</mat-radio-button>
+      <mat-radio-button disabled value="GS">GS</mat-radio-button>
+      <mat-radio-button disabled value="SE">SE</mat-radio-button>
+      <mat-radio-button disabled value="LH">LH</mat-radio-button>
+      <mat-radio-button disabled value="other">Other</mat-radio-button>
     </div>
-    <div>
-      <label>الشهادة الرسمية:</label>
-      <input value="value" disabled>
-    </div>
-    <div>
-      <label>الشهادة الرسمية:</label>
 
+    <!--------------------------------------------------------------------------------------------------------------->
+    <div>
+      <label>المعدل من ١٠٠:</label>
+      <input value="value" disabled>
+    </div>
+    <!--------------------------------------------------------------------------------------------------------------->
+    <div>
+      <label>highSchoolGraduationDate:</label>
+      <input value="value" disabled>
+    </div>
+    <!--------------------------------------------------------------------------------------------------------------->
+    <h4>المدرسة الثانوية التي تخرجت منها</h4>
+    <div>
+      <label>إسم المدرسة:</label>
       <input value="value" disabled>
     </div>
     <div>
-      <label>الشهادة الرسمية:</label>
-
+      <label>عنوانها:</label>
       <input value="value" disabled>
     </div>
     <div>
-      <label>الشهادة الرسمية:</label>
+      <label>naw3 al madrasa:</label>
+      <mat-radio-button value="PRIVATE">خاصة</mat-radio-button>
+      <mat-radio-button value="UNRWA">UNRWA</mat-radio-button>
+      <mat-radio-button value="PUBLIC">رسمية</mat-radio-button>
+    </div>
 
+    <br>
+
+    <!--------------------------------------------------------------------------------------------------------------->
+    <h4>اذا كنت ملتحقا بالجامعة </h4>
+    <div>
+      <label>اسم الجامعة:</label>
       <input value="value" disabled>
     </div>
     <div>
-      <label>الشهادة الرسمية:</label>
-
+      <label>الاختصاص الجامعي:</label>
       <input value="value" disabled>
     </div>
     <div>
-      <label>الشهادة الرسمية:</label>
-
+      <label>oldUniMajor:</label>
+      <input value="value" disabled>
+    </div>
+    <br>
+    <!--------------------------------------------------------------------------------------------------------------->
+    <h4> shahada tanwi l 7ousul 3alayha</h4>
+    <div>
+      <label>naw3a:</label>
+      <mat-radio-button value="BACHELOR">Bachelor</mat-radio-button>
+      <mat-radio-button value="MASTER">Master</mat-radio-button>
+      <mat-radio-button value="DEGREE_EDUCATION">Deplom tarbiya</mat-radio-button>
+      <mat-radio-button value="OTHER">Other</mat-radio-button>
+    </div>
+    <div>
+      <label>tarikh al takharoj al moutawaka3:</label>
       <input value="value" disabled>
     </div>
     <div>
-      <label>الشهادة الرسمية:</label>
-
+      <label>ekhtisas al lathi tanwi 3alayh:</label>
       <input value="value" disabled>
-
+    </div>
+    <br>
+    <!--------------------------------------------------------------------------------------------------------------->
+    <h4>jami3a tanwi l elti7ak biha</h4>
+    <div>
+      <label>name:</label>
+      <input value="value" disabled>
     </div>
     <div>
-      <label>الشهادة الرسمية:</label>
+      <label>address:</label>
       <input value="value" disabled>
     </div>
+    <br>
+    <!--------------------------------------------------------------------------------------------------------------->
+  </mat-expansion-panel>
+  <mat-expansion-panel (opened)="educationalState = true"
+                       (closed)="educationalState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Documents
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <div>
+      <label>PDF src</label>
+    </div>
+    <pdf-viewer [render-text]="true" src="assets/cl.pdf" style="display: block;"></pdf-viewer>
+
+
   </mat-expansion-panel>
 </mat-accordion>
+
+<app-rate-card></app-rate-card>

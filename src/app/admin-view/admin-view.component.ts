@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-admin-view',
@@ -8,13 +8,13 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class AdminViewComponent implements OnInit {
 
-  id: String;
+  id: string;
   personalState = false;
   educationalState = false;
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.id = this.route.snapshot.paramMap.get("id");
+    this.id = this.route.snapshot.paramMap.get('id');
     // make api call to fetch the application with this id
   }
 

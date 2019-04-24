@@ -1,11 +1,11 @@
-import {Injectable} from "@angular/core";
-import {Router} from "@angular/router";
+import {Injectable} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthenticationService {
-  constructor(private router:Router) {
+  constructor(private router: Router) {
   }
 
   isAuthenticated() {
@@ -23,12 +23,15 @@ export class AuthenticationService {
   login(username: string, password: string) {
     console.log(username, password);
     localStorage.setItem('currentUser', username);
-    if(username === 'souk@') {
+    if (username === 'souk@') {
       localStorage.setItem('currentRole', 'admin');
       this.router.navigate(['admin']);
-    }else {
+    } else {
       localStorage.setItem('currentRole', 'student');
-      this.router.navigate(['personal']);
+      if (username === 'started@') {
+        localStorage.setItem('currentStatus', 'submitted');
+      }
+      this.reRoute();
     }
     // make http call to login
     // add if started filling, take to tracker
@@ -40,15 +43,19 @@ export class AuthenticationService {
 
   }
 
-  signUp(username: string, password: string){
+  signUp(username: string, password: string) {
     console.log(username, password);
     localStorage.setItem('currentUser', username);
-    if(username === 'souk@') {
+    if (username === 'souk@') {
       localStorage.setItem('currentRole', 'admin');
-    }else {
+      this.router.navigate(['admin']);
+    } else {
       localStorage.setItem('currentRole', 'student');
+      if (username === 'started@') {
+        localStorage.setItem('currentStatus', 'submitted');
+      }
+      this.reRoute();
     }
-    this.router.navigate(['']);
     // make http call to signup
   }
 
@@ -60,7 +67,21 @@ export class AuthenticationService {
     return true;
   }
 
+  getStatus() {
+    return localStorage.getItem('currentStatus');
+  }
+
   isAdmin(): boolean {
     return (this.getCurrentUserRole() === 'admin');
+  }
+
+  reRoute() {
+    if ( this.getStatus() === 'submitted') {
+      this.router.navigate(['tracker']);
+    } else if ( this.getStatus() === 'personal') {
+      this.router.navigate(['educational']);
+    } else {
+      this.router.navigate(['home']);
+    }
   }
 }

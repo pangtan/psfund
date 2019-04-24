@@ -8,11 +8,11 @@ import {
   MatButtonModule,
   MatCardModule, MatDatepickerModule, MatExpansionModule,
   MatFormFieldModule, MatGridListModule,
-  MatInputModule, MatListModule, MatNativeDateModule,
-  MatRadioModule, MatTableModule,
+  MatInputModule, MatListModule, MatNativeDateModule, MatOptionModule,
+  MatRadioModule, MatSelectModule, MatStepperModule, MatTableModule,
   MatToolbarModule
 } from '@angular/material';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SignupComponent} from './signup/signup.component';
 import {PersonalComponent} from './personal/personal.component';
@@ -20,6 +20,10 @@ import {EducationalComponent} from './educational/educational.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminViewComponent } from './admin-view/admin-view.component';
 import { AdminRateComponent } from './admin-rate/admin-rate.component';
+import {PdfViewerModule} from 'ng2-pdf-viewer';
+import { RateCardComponent } from './rate-card/rate-card.component';
+import { TrackComponent } from './track/track.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,10 @@ import { AdminRateComponent } from './admin-rate/admin-rate.component';
     EducationalComponent,
     AdminComponent,
     AdminViewComponent,
-    AdminRateComponent
+    AdminRateComponent,
+    RateCardComponent,
+    TrackComponent,
+    HomeComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -49,7 +56,11 @@ import { AdminRateComponent } from './admin-rate/admin-rate.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatTableModule,
-    MatExpansionModule
+    MatExpansionModule,
+    PdfViewerModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,15 @@
+<mat-card class="card">
+  <mat-card-title> Rate Application </mat-card-title>
+  <mat-card-content>
+    <mat-form-field>
+      <mat-select required>
+        <mat-option value="accepted">Accepted</mat-option>
+        <mat-option value="needsWork">Needs Work</mat-option>
+        <mat-option value="rejected">Rejected</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="sendMail()">RATE</button>
+  </mat-card-actions>
+</mat-card>

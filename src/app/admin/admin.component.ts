@@ -1,14 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
-import {MatTableDataSource} from "@angular/material";
-import {$} from "protractor";
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 const DATA = [
-  {username: 't@gmail.com', status: 'Submitted', view: 't@gmail.com/view', rate: 't@gmail.com/rate'},
-  {username: 't2@gmail.com', status: 'Pending', view: 't2@gmail.com/view', rate: 't2@gmail.com/rate'},
-  {username: 't3@gmail.com', status: 'Pending', view: 't3@gmail.com/view', rate: 't3@gmail.com/rate'},
-  {username: 't4@gmail.com', status: 'Submitted', view: 't4@gmail.com/view', rate: 't4@gmail.com/rate'},
-  {username: 't5@gmail.com', status: 'Pending', view: 't5@gmail.com/view', rate: 't5@gmail.com/rate'}
+  {username: 'ahmad@gmail.com', status: 'Submitted', view: 'ahmad@gmail.com/view', rate: 'ahmad@gmail.com/rate'},
+  {username: 'elie@gmail.com', status: 'Pending', view: 'elie@gmail.com/view', rate: 'elie@gmail.com/rate'},
+  {username: 'fatima@gmail.com', status: 'Pending', view: 'fatima@gmail.com/view', rate: 'fatima@gmail.com/rate'},
+  {username: 'george@gmail.com', status: 'Submitted', view: 'george@gmail.com/view', rate: 'george@gmail.com/rate'},
+  {username: 'camilla@gmail.com', status: 'Pending', view: 'camilla@gmail.com/view', rate: 'camilla@gmail.com/rate'}
 ];
 
 
@@ -21,14 +19,16 @@ export class AdminComponent implements OnInit {
 
   displayedColumns: string[] = ['username', 'status', 'view', 'rate'];
   dataSource = DATA;
-  constructor(private router: Router) { }
+
+  constructor(private router: Router) {
+  }
 
   ngOnInit() {
   }
 
   goToPage(url) {
     console.log(url);
-    this.router.navigate(['admin/'+url]);
+    this.router.navigate(['admin/' + url]);
   }
 
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthenticationService} from "../service/authentication.service";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {AuthenticationService} from '../service/authentication.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-educational',
@@ -13,20 +13,20 @@ export class EducationalComponent implements OnInit {
 
   constructor(private authService: AuthenticationService, private fb: FormBuilder) {
     this.educationalForm = this.fb.group({
-      'highSchoolDegree':['', Validators.required],
-      'highSchoolAverage':['', [Validators.required, Validators.pattern("^[0-9]*$")]],
-      'highSchoolGraduationDate':['', Validators.required],
-      'highSchoolName':['', Validators.required],
-      'highSchoolAddress':['', Validators.required],
-      'highSchoolType':['', Validators.required],
-      'oldUniName':[''],
-      'oldUniAddress':[''],
-      'oldUniMajor':[''],
-      'degreeLevelPlanned':['', Validators.required],
-      'expectedGraduationDate':['', Validators.required],
-      'majorPlanned':['', Validators.required],
-      'uniName':['', Validators.required],
-      'uniAddress':['', Validators.required]
+      highSchoolDegree: ['', Validators.required],
+      highSchoolAverage: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+      highSchoolGraduationDate: ['', Validators.required],
+      highSchoolName: ['', Validators.required],
+      highSchoolAddress: ['', Validators.required],
+      highSchoolType: ['', Validators.required],
+      oldUniName: [''],
+      oldUniAddress: [''],
+      oldUniMajor: [''],
+      degreeLevelPlanned: ['', Validators.required],
+      expectedGraduationDate: ['', Validators.required],
+      majorPlanned: ['', Validators.required],
+      uniName: ['', Validators.required],
+      uniAddress: ['', Validators.required]
     });
   }
 
@@ -34,12 +34,14 @@ export class EducationalComponent implements OnInit {
   }
 
   save(formValue) {
-    console.log(formValue)
+    console.log(formValue);
   }
 
   next(formValue) {
-    this.save(formValue)
-    //move to next page
+    localStorage.setItem('currentStatus', 'educational');
+
+    this.save(formValue);
+    // move to next page
   }
 
 }

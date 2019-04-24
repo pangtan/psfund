@@ -1,15 +1,27 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <mat-toolbar>
-  <div class="logo-corner">
-  <img src="assets/logo.png" alt="PSFund">
+  <div>
+    <img (click)="router.navigate(['home'])" src="assets/logo.png" alt="PSFund">
   </div>
-  <div class="login-corner" *ngIf="!authService.isAuthenticated()" >
-    <button (click)="login()" mat-button>Login</button>
+  <div>
+    <button (click)="router.navigate(['home'])" mat-button>Home</button>
+  </div>
+  <div>
+    <button [disabled]="authService.getStatus()!=='tracker'" (click)="router.navigate(['home'])" mat-button>Tracker</button>
+    <button (click)="continueApp()" mat-button>My Application</button>
+  </div>
+  <div *ngIf="authService.getCurrentUserRole()==='admin' && authService.isAuthenticated()">
+    <button (click)="router.navigate(['admin'])" mat-button>Admin View</button>
+  </div>
+  <span class="spacer"></span>
+  <div *ngIf="!authService.isAuthenticated()">
     <button (click)="signUp()" mat-button>SignUp</button>
+    <button (click)="login()" mat-button>Login</button>
   </div>
-  <div class="logout-corner" *ngIf="authService.isAuthenticated()">
+  <div *ngIf="authService.isAuthenticated()">
     <label>{{authService.getCurrentUsername()}}</label>
     <button (click)="logout()" mat-button>Logout</button>
   </div>
 </mat-toolbar>
+
 <router-outlet></router-outlet>

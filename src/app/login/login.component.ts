@@ -1,7 +1,7 @@
-import {Component, OnInit} from "@angular/core";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {AuthenticationService} from "../service/authentication.service";
-import {EmailValidator} from "../validator/EmailValidator";
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AuthenticationService} from '../service/authentication.service';
+import {EmailValidator} from '../validator/EmailValidator';
 
 
 @Component({
@@ -17,17 +17,17 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    let username = new FormControl('',[Validators.required, EmailValidator]);
-    let password = new FormControl('',[Validators.required]);
+    const username = new FormControl('', [Validators.required, EmailValidator]);
+    const password = new FormControl('', [Validators.required]);
 
     this.loginForm = new FormGroup({
-      username: username,
-      password: password
+      username,
+      password
     });
   }
 
-  login(formValue){
-    if(this.loginForm.valid){
+  login(formValue) {
+    if (this.loginForm.valid) {
       this.authService.login(formValue.username, formValue.password);
     }
   }

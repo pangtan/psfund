@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
-import {Router} from "@angular/router";
-import {AuthenticationService} from "./service/authentication.service";
-import {log} from "util";
+import {Component} from '@angular/core';
+import {Router} from '@angular/router';
+import {AuthenticationService} from './service/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -28,5 +27,15 @@ export class AppComponent {
 
   StartApp() {
     this.router.navigate(['/personal']);
+  }
+
+  continueApp() {
+    if ( this.authService.getStatus() === 'submitted') {
+      this.router.navigate(['tracker']);
+    } else if ( this.authService.getStatus() === 'personal') {
+      this.router.navigate(['educational']);
+    } else {
+      this.router.navigate(['personal']);
+    }
   }
 }

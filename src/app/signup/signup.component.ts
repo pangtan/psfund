@@ -1,9 +1,8 @@
-import {Component, OnInit} from "@angular/core";
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {AuthenticationService} from "../service/authentication.service";
-import {EmailValidator} from "../validator/EmailValidator";
-import {ConfirmPassValidator} from "../validator/ConfirmPassValidator";
-import {UserInfo} from "../model/user-info.model";
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AuthenticationService} from '../service/authentication.service';
+import {EmailValidator} from '../validator/EmailValidator';
+import {UserInfo} from '../model/user-info.model';
 
 @Component({
   selector: 'app-signup',
@@ -19,23 +18,23 @@ export class SignupComponent implements OnInit {
   }
 
   ngOnInit() {
-    let username = new FormControl('', [Validators.required, EmailValidator]);
-    let password = new FormControl('', [Validators.required]);
-    let confirmPassword = new FormControl('', [Validators.required]);
+    const username = new FormControl('', [Validators.required, EmailValidator]);
+    const password = new FormControl('', [Validators.required]);
+    const confirmPassword = new FormControl('', [Validators.required]);
 
     this.signUpForm = new FormGroup({
-      username: username,
-      password: password,
-      confirmPassword: confirmPassword
+      username,
+      password,
+      confirmPassword
     });
   }
 
   signUp(formValue) {
     if (this.signUpForm.valid) {
-      if (formValue.password == formValue.confirmPassword) {
+      if (formValue.password === formValue.confirmPassword) {
         this.authService.signUp(formValue.username, formValue.password);
       } else {
-        alert("Password doesn't match confirm Password");
+        alert('Password doesn\'t match confirm Password');
       }
     }
   }

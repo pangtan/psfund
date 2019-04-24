@@ -1,7 +1,7 @@
-import {FormControl} from "@angular/forms";
+import {FormControl} from '@angular/forms';
 
 export function EmailValidator(control: FormControl ) {
-  if (control.value && control.value.indexOf("@") != -1) {
+  if (control.value && control.value.indexOf('@') !== -1) {
     return null;
   }
   return {
