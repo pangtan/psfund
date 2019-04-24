@@ -6,10 +6,10 @@ import {AppComponent} from './app.component';
 import {LoginComponent} from './login/login.component';
 import {
   MatButtonModule,
-  MatCardModule, MatDatepickerModule,
+  MatCardModule, MatDatepickerModule, MatExpansionModule,
   MatFormFieldModule, MatGridListModule,
   MatInputModule, MatListModule, MatNativeDateModule,
-  MatRadioModule,
+  MatRadioModule, MatTableModule,
   MatToolbarModule
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
@@ -17,6 +17,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SignupComponent} from './signup/signup.component';
 import {PersonalComponent} from './personal/personal.component';
 import {EducationalComponent} from './educational/educational.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminViewComponent } from './admin-view/admin-view.component';
+import { AdminRateComponent } from './admin-rate/admin-rate.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import {EducationalComponent} from './educational/educational.component';
     LoginComponent,
     SignupComponent,
     PersonalComponent,
-    EducationalComponent
+    EducationalComponent,
+    AdminComponent,
+    AdminViewComponent,
+    AdminRateComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -41,7 +47,9 @@ import {EducationalComponent} from './educational/educational.component';
     MatGridListModule,
     MatListModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTableModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

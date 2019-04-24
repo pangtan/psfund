@@ -1,0 +1,8 @@
+div {
+  display: inline-block;
+  margin: 20px;
+}
+
+div input {
+  display: block;
+}

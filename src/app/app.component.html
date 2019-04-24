@@ -3,19 +3,13 @@
   <div class="logo-corner">
   <img src="assets/logo.png" alt="PSFund">
   </div>
-
-  <div class="application-center" >
-    <button [disabled]="!authService.isAuthenticated()" (click)="StartApp()" mat-button>Application Form</button>
-  </div>
-
   <div class="login-corner" *ngIf="!authService.isAuthenticated()" >
     <button (click)="login()" mat-button>Login</button>
     <button (click)="signUp()" mat-button>SignUp</button>
   </div>
   <div class="logout-corner" *ngIf="authService.isAuthenticated()">
-    <label>{{authService.getCurrentUser()}}</label>
+    <label>{{authService.getCurrentUsername()}}</label>
     <button (click)="logout()" mat-button>Logout</button>
   </div>
-
 </mat-toolbar>
 <router-outlet></router-outlet>

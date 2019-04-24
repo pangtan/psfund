@@ -9,19 +9,29 @@ export class AuthenticationService {
   }
 
   isAuthenticated() {
-    return !!this.getCurrentUser();
-
+    return !!this.getCurrentUsername();
   }
 
-  getCurrentUser() {
+  getCurrentUsername() {
     return localStorage.getItem('currentUser');
+  }
+
+  getCurrentUserRole() {
+    return localStorage.getItem('currentRole');
   }
 
   login(username: string, password: string) {
     console.log(username, password);
     localStorage.setItem('currentUser', username);
-    this.router.navigate(['']);
+    if(username === 'souk@') {
+      localStorage.setItem('currentRole', 'admin');
+      this.router.navigate(['admin']);
+    }else {
+      localStorage.setItem('currentRole', 'student');
+      this.router.navigate(['personal']);
+    }
     // make http call to login
+    // add if started filling, take to tracker
   }
 
   logout() {
@@ -33,6 +43,11 @@ export class AuthenticationService {
   signUp(username: string, password: string){
     console.log(username, password);
     localStorage.setItem('currentUser', username);
+    if(username === 'souk@') {
+      localStorage.setItem('currentRole', 'admin');
+    }else {
+      localStorage.setItem('currentRole', 'student');
+    }
     this.router.navigate(['']);
     // make http call to signup
   }
@@ -43,5 +58,9 @@ export class AuthenticationService {
       return false;
     }
     return true;
+  }
+
+  isAdmin(): boolean {
+    return (this.getCurrentUserRole() === 'admin');
   }
 }

@@ -3,6 +3,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthenticationService} from "../service/authentication.service";
 import {EmailValidator} from "../validator/EmailValidator";
 import {ConfirmPassValidator} from "../validator/ConfirmPassValidator";
+import {UserInfo} from "../model/user-info.model";
 
 @Component({
   selector: 'app-signup',
@@ -12,6 +13,7 @@ import {ConfirmPassValidator} from "../validator/ConfirmPassValidator";
 export class SignupComponent implements OnInit {
 
   signUpForm: FormGroup;
+  currentUser: UserInfo;
 
   constructor(private authService: AuthenticationService) {
   }
@@ -31,7 +33,7 @@ export class SignupComponent implements OnInit {
   signUp(formValue) {
     if (this.signUpForm.valid) {
       if (formValue.password == formValue.confirmPassword) {
-        this.authService.login(formValue.username, formValue.password);
+        this.authService.signUp(formValue.username, formValue.password);
       } else {
         alert("Password doesn't match confirm Password");
       }
