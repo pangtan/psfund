@@ -1,11 +1,16 @@
 import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
+import {HttpClient} from '@angular/common/http';
+import {UserInfo} from '../model/user-info.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthenticationService {
-  constructor(private router: Router) {
+
+  // apiURL = 'http://127.0.0.1:5000';
+  user: UserInfo;
+  constructor(private router: Router, private httpClient: HttpClient) {
   }
 
   isAuthenticated() {
@@ -21,9 +26,14 @@ export class AuthenticationService {
   }
 
   login(username: string, password: string) {
-    console.log(username, password);
+    this.user.username = username;
+    this.user.password = password;
+    // if (this.httpClient.post(`${this.apiURL}/user`, this.user).subscribe()) {
+    //   return;
+    // }
+
     localStorage.setItem('currentUser', username);
-    if (username === 'souk@') {
+    if (username === 'souk@gmail.com') {
       localStorage.setItem('currentRole', 'admin');
       this.router.navigate(['admin']);
     } else {
@@ -33,6 +43,7 @@ export class AuthenticationService {
       }
       this.reRoute();
     }
+
     // make http call to login
     // add if started filling, take to tracker
   }
@@ -76,9 +87,9 @@ export class AuthenticationService {
   }
 
   reRoute() {
-    if ( this.getStatus() === 'submitted') {
+    if (this.getStatus() === 'submitted') {
       this.router.navigate(['tracker']);
-    } else if ( this.getStatus() === 'personal') {
+    } else if (this.getStatus() === 'personal') {
       this.router.navigate(['educational']);
     } else {
       this.router.navigate(['home']);

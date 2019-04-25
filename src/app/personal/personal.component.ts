@@ -3,6 +3,8 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthenticationService} from '../service/authentication.service';
 import {Router} from '@angular/router';
 import {EmailValidator} from '../validator/EmailValidator';
+import {HttpClient} from '@angular/common/http';
+import {PersonalInfo} from '../model/personal-info.model';
 
 @Component({
   selector: 'app-personal',
@@ -11,8 +13,12 @@ import {EmailValidator} from '../validator/EmailValidator';
 })
 export class PersonalComponent implements OnInit {
   personalForm: FormGroup;
+  // apiURL = 'http://127.0.0.1:5000';
 
-  constructor(private authService: AuthenticationService, private fb: FormBuilder, private router: Router) {
+  data: PersonalInfo;
+
+  constructor(private authService: AuthenticationService, private fb: FormBuilder, private router: Router,
+              private httpClient: HttpClient) {
     this.personalForm = this.fb.group({
       fullName: ['', Validators.required],
       fullNameEnglish: ['', Validators.required],
@@ -39,9 +45,14 @@ export class PersonalComponent implements OnInit {
 
 
   ngOnInit() {
+    // add api call
+    // data = this.httpClient.get(`${this.apiURL}/personal?username=${id}`).subcribe();
   }
 
   save(formValue) {
+    // this.httpClient.post(`${this.apiURL}/personal`, formValue).subcribe();
+
+    // make post to save the data
     console.log(formValue);
   }
 
