@@ -24,6 +24,7 @@ import {PdfViewerModule} from 'ng2-pdf-viewer';
 import { RateCardComponent } from './rate-card/rate-card.component';
 import { TrackComponent } from './track/track.component';
 import { HomeComponent } from './home/home.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { HomeComponent } from './home/home.component';
     PdfViewerModule,
     MatOptionModule,
     MatSelectModule,
-    MatStepperModule
+    MatStepperModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

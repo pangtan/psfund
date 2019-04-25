@@ -26,14 +26,12 @@ export class AuthenticationService {
   }
 
   login(username: string, password: string) {
-    this.user.username = username;
-    this.user.password = password;
     // if (this.httpClient.post(`${this.apiURL}/user`, this.user).subscribe()) {
     //   return;
     // }
 
     localStorage.setItem('currentUser', username);
-    if (username === 'souk@gmail.com') {
+    if (username === 'souk@') {
       localStorage.setItem('currentRole', 'admin');
       this.router.navigate(['admin']);
     } else {
